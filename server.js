@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const hbs = require('hbs');
+const m = require('./modules/m.js');
 const port = process.env.PORT || 3000;
 var app = express();
 
@@ -32,6 +33,7 @@ hbs.registerHelper('screamIt', (text) => {
 });
 
 app.get('/', (req, res) => {
+    m.getAllCalendarDays();
     // res.send('hello express!');
     res.render('home.hbs', {
         pageTitle: 'Home',
