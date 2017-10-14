@@ -1,10 +1,12 @@
 
-getAllCalendarDays =  () => {
-    console.log('dd');
+calcHeatOnListings = async (litingList) => {
+    litingList.map((listing) => {
+        listing.heat = (listing.price / 20) * listing.demand;
+    });
+    return litingList;
 }
 
 
-
 module.exports = {
-    getAllCalendarDays,
+    calcHeatOnListings,
 };
